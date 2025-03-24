@@ -32,7 +32,7 @@ const HeroSection = () => {
       className="min-h-screen relative flex items-center overflow-hidden pt-20"
     >
       {/* Background subtle pattern */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+      <div className="absolute inset-0 bg-grid-pattern opacity-5 bg-grid-16"></div>
       
       {/* Hero content */}
       <div className="container-width section-spacing grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -41,7 +41,7 @@ const HeroSection = () => {
             <div className="inline-block mb-4 px-3 py-1 rounded-full bg-primary/5 border border-primary/10 text-xs font-medium tracking-wide">
               SOCIAL MEDIA SPECIALIST
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance">
               Transforming Brands with Engaging Social Media Content
             </h1>
             <p className="mt-6 text-lg text-muted-foreground max-w-lg">
@@ -50,12 +50,12 @@ const HeroSection = () => {
           </div>
           
           <div className="flex flex-wrap gap-4">
-            <Button className="rounded-full px-6 py-6 group">
+            <Button className="rounded-full px-6 py-6 group bg-primary hover:bg-primary/90">
               View My Work
               <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
             
-            <Button variant="outline" className="rounded-full px-6 py-6">
+            <Button variant="outline" className="rounded-full px-6 py-6 border-primary/20 hover:bg-primary/5">
               Contact Me
             </Button>
           </div>
@@ -99,7 +99,7 @@ const HeroSection = () => {
           
           {/* Floating card */}
           <div className="absolute -bottom-6 -left-6 p-4 glass-card rounded-lg shadow-lg animate-float max-w-[200px]">
-            <p className="text-xs font-medium">Instagram Growth</p>
+            <p className="text-xs font-medium text-muted-foreground">Instagram Growth</p>
             <p className="text-2xl font-bold">+230%</p>
             <div className="flex items-center mt-1">
               <span className="text-green-500 text-xs">↑ 42.8%</span>

@@ -114,12 +114,21 @@ export default {
 				'pulse-soft': 'pulse-soft 3s ease-in-out infinite'
 			},
 			fontFamily: {
-				sans: ['Inter', 'sans-serif'],
-				display: ['Inter', 'sans-serif'],
+				sans: ['Roboto', 'sans-serif'],
+				display: ['Montserrat', 'sans-serif'],
 			},
 			backdropFilter: {
 				'none': 'none',
 				'blur': 'blur(8px)',
+			},
+			backgroundImage: {
+				'grid-pattern': 'radial-gradient(circle, rgba(0,0,0,0.05) 1px, transparent 1px)',
+				'dot-pattern': 'radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px)',
+			},
+			backgroundSize: {
+				'grid-8': '8px 8px',
+				'grid-16': '16px 16px',
+				'grid-24': '24px 24px',
 			},
 		}
 	},

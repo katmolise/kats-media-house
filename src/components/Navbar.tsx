@@ -33,7 +33,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container-width px-6 mx-auto flex justify-between items-center">
-        <a href="#" className="text-xl font-semibold tracking-tight">
+        <a href="#" className="text-xl font-display font-semibold tracking-tight">
           Portfolio<span className="text-primary font-bold">.</span>
         </a>
 
@@ -69,7 +69,7 @@ const Navbar = () => {
           >
             Contact
           </a>
-          <Button size="sm" className="rounded-full px-6">
+          <Button size="sm" className="rounded-full px-6 bg-primary hover:bg-primary/90">
             Let's Talk
           </Button>
         </div>
@@ -123,7 +123,7 @@ const Navbar = () => {
             >
               Contact
             </a>
-            <Button size="sm" className="rounded-full w-full">
+            <Button size="sm" className="rounded-full w-full bg-primary hover:bg-primary/90">
               Let's Talk
             </Button>
           </div>
