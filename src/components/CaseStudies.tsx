@@ -1,5 +1,6 @@
 
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowRight } from "lucide-react";
@@ -156,9 +157,11 @@ const CaseStudyDetail = ({ study }: { study: CaseStudy }) => {
           </div>
           
           <div className="pt-4">
-            <Button className="rounded-full px-6 group">
-              View Full Case Study
-              <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+            <Button asChild className="rounded-full px-6 group">
+              <Link to={`/case-study/${study.id}`}>
+                View Full Case Study
+                <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </Button>
           </div>
         </div>

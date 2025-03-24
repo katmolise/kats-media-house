@@ -1,5 +1,6 @@
 
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowRight } from "lucide-react";
@@ -13,6 +14,7 @@ interface PortfolioItem {
   image: string;
   results: string;
   tags: string[];
+  serviceId?: string; // Optional link to service page
 }
 
 const PORTFOLIO_ITEMS: PortfolioItem[] = [
@@ -23,7 +25,8 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     category: "instagram",
     image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
     results: "45% increase in engagement",
-    tags: ["Fashion", "Social Media", "Content Creation"]
+    tags: ["Fashion", "Social Media", "Content Creation"],
+    serviceId: "content-creation"
   },
   {
     id: 2,
@@ -32,7 +35,8 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     category: "tiktok",
     image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
     results: "230% growth in followers",
-    tags: ["Food", "TikTok", "Video Content"]
+    tags: ["Food", "TikTok", "Video Content"],
+    serviceId: "social-media-management"
   },
   {
     id: 3,
@@ -41,7 +45,8 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     category: "instagram",
     image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
     results: "85% increase in website traffic",
-    tags: ["Fitness", "Product Launch", "Influencer"]
+    tags: ["Fitness", "Product Launch", "Influencer"],
+    serviceId: "content-strategy"
   },
   {
     id: 4,
@@ -50,7 +55,8 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     category: "youtube",
     image: "https://images.unsplash.com/photo-1527631746610-bca00a040d60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1474&q=80",
     results: "320K views across series",
-    tags: ["Travel", "YouTube", "Series"]
+    tags: ["Travel", "YouTube", "Series"],
+    serviceId: "content-creation"
   },
   {
     id: 5,
@@ -59,7 +65,8 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     category: "instagram",
     image: "https://images.unsplash.com/photo-1616046229478-9901c5536a45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80",
     results: "150% increase in profile visits",
-    tags: ["Lifestyle", "Reels", "Brand"]
+    tags: ["Lifestyle", "Reels", "Brand"],
+    serviceId: "social-media-management"
   },
   {
     id: 6,
@@ -68,7 +75,8 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     category: "tiktok",
     image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1420&q=80",
     results: "1.2M total plays",
-    tags: ["Tech", "Unboxing", "TikTok"]
+    tags: ["Tech", "Unboxing", "TikTok"],
+    serviceId: "analytics-reporting"
   }
 ];
 
@@ -224,10 +232,19 @@ const PortfolioCard = ({ item }: { item: PortfolioItem }) => {
           <div className="text-sm font-medium text-green-600 dark:text-green-400">
             {item.results}
           </div>
-          <Button variant="ghost" size="sm" className="rounded-full hover:bg-primary/5 px-3 group">
-            View Project
-            <ArrowRight size={14} className="ml-1 group-hover:translate-x-1 transition-transform" />
-          </Button>
+          {item.serviceId ? (
+            <Button asChild variant="ghost" size="sm" className="rounded-full hover:bg-primary/5 px-3 group">
+              <Link to={`/services/${item.serviceId}`}>
+                Learn More
+                <ArrowRight size={14} className="ml-1 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
+          ) : (
+            <Button variant="ghost" size="sm" className="rounded-full hover:bg-primary/5 px-3 group">
+              View Project
+              <ArrowRight size={14} className="ml-1 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          )}
         </div>
       </div>
     </div>
