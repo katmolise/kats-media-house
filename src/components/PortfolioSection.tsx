@@ -186,9 +186,11 @@ const PortfolioSection = () => {
         </Tabs>
         
         <div className="text-center mt-12">
-          <Button variant="outline" className="rounded-full px-6 group">
-            View All Projects 
-            <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+          <Button variant="outline" asChild className="rounded-full px-6 group">
+            <Link to="/projects">
+              View All Projects 
+              <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </Button>
         </div>
       </div>
